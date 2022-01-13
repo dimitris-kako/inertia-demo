@@ -25,7 +25,11 @@ Route::get('/', function () {
 
 Route::get('/users', function () {
     return Inertia::render('Users', [
-        'time' => now()
+        'users' => \App\Models\User::paginate(5)->through(fn($user) => [
+            'id' => $user->id,
+            'name' => $user->name,
+            'email' => $user->email,
+        ])
     ]);
 });
 

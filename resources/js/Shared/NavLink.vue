@@ -8,11 +8,9 @@
 </template>
 
 <script>
-import {Link} from "@inertiajs/inertia-vue3";
 
 export default {
     name: "Nav",
-    components: { Link },
     props: {
         active: Boolean,
     }
